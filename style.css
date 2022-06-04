@@ -1,0 +1,232 @@
+
+		html{
+			height: 100%;
+		}
+		@font-face{
+			src:url(18473.ttf);
+			font-family: my-font;
+		}
+		body{
+			font-family: my-font;
+			color: white;
+			height: 100%;
+			overflow-x: hidden;
+		}
+		/*главная*/
+		.school{
+			position: absolute;
+			top:68%;
+			left: 70%;
+			transition: 1s ease;
+		}
+		.mastery{
+			top:50%;
+			position: absolute;
+			left:10%;
+			transition: 1s ease;
+		}
+		.main_player{
+			position: absolute;
+			width: 100px;
+			top:50%;
+			left: 50%;
+			transition:  0.8s;
+		}
+		.arena{
+			position: absolute;
+			top:13%;
+			left: 38%;
+			transition: 1s ease;
+		}
+		.nlo {
+			position: absolute;
+			right: -700px;
+			animation-name: ;
+			animation-duration: 3s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+			transition: 1s;
+		}
+		.charm {
+			width: 500px;
+		 	position: absolute;
+			left:  82%;
+			top:  12%;
+			transform: rotate(90deg);
+		}
+		@keyframes ufo{
+			0%{right: -700px; opacity: 1; transform: rotate(0deg); top: 50px;}
+			100%{right: 700px; opacity: 1; transform: rotate(180deg); top: 650px;}
+		}
+		@keyframes ufoMove{
+			0%{right: 700px; opacity: 1; transform: rotate(180deg); top: 650px;}
+			50%{right: 700px; opacity: 1; transform: rotate(160deg); top: 300px;}
+			100%{right: -700px; opacity: 1; transform: rotate(184deg); top: 150px;}
+		}
+		.text {
+			opacity: 0;
+			font-size: 40px;
+		}
+		/*2 локация*/
+		
+		.loc2_teacher {
+			height: 100px;
+			width: 80px;
+			margin-left: 55%; 
+			position: absolute; 
+			margin-top: 10%;
+            background-image: url(Loc2/female_stand.png);
+            background-size: 100% 100%;
+		}
+		.loc2_talk {
+			position: absolute;
+			width: 300px;
+			margin-left: 56%;
+			display: none;
+			background-image: url(Loc2/talk.png);
+			background-size: 100% 100%;
+			color: black;
+			padding: 50px;
+		}
+
+		.loc2_pravilno{
+			background-color: gray; width: 100px; position: absolute;
+		}
+
+		.loc2_player {
+			left:30%; top:60%; position: absolute;
+			width: 100px;
+		}
+
+		.loc2_variants {
+			background-color: gray; width: 100px; position: absolute;
+		}
+		.loc2_variants_block{
+			display: flex; position: absolute; top: 70%;left: 2%; display:none;
+		}
+		.loc2_timeSize {
+			font-size: 30px
+		}
+		.loc2_pole {
+			margin-top: 25%;
+			position: absolute;
+		}
+		.sword {
+			width: 130px; border: white 2px solid; display: none
+		}
+
+		.nojni {
+			width: 130px; border: white 2px solid; display: none
+		}
+		.shield {
+			width: 130px; border: white 2px solid; display: none
+		}
+	/*локейшн 3 */
+		.item {
+            width: 150px;
+            height: 150px;
+            background-size:100%;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            height: 200px;
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+		.loc3_teacher {
+			height: 100px;
+			width: 80px;
+			margin-left: 55%; 
+			position: absolute; 
+			margin-top: 10%;
+            background-image: url(Loc2/female_stand.png);
+            background-size: 100% 100%;
+		}
+		.loc3_talk {
+			position: absolute;
+			width: 300px;
+			margin-left: 56%;
+			display: none;
+			background-image: url(Loc2/talk.png);
+			background-size: 100% 100%;
+			color: black;
+			padding: 50px;
+		}
+
+		.loc3_pravilno{
+			background-color: gray; width: 100px; position: absolute;
+		}
+
+		.loc3_player {
+			left:30%; top:40%; position: absolute;
+			width: 100px;
+		}
+
+		.loc3_variants {
+			background-color: gray; width: 100px; position: absolute;
+		}
+		.loc3_variants_block{
+			display: flex; position: absolute; top: 70%;left: 2%; display:none;
+		}
+		.loc3_timeSize {
+			font-size: 30px
+		}
+		.loc3_pole {
+			margin-top: 25%;
+			position: absolute;
+		}
+	/*локейшн 4 */
+		.geo {
+			position: absolute;
+			display: none;
+		}
+		.geoIMG {
+			width: 40px;
+		}
+		.loc4_teacher {
+			height: 100px;
+			width: 80px;
+			margin-left: 55%; 
+			position: absolute; 
+			margin-top: 10%;
+            background-image: url(Loc2/female_stand.png);
+            background-size: 100% 100%;
+		}
+		.loc4_talk {
+			position: absolute;
+			width: 300px;
+			margin-left: 48%;
+			margin-top: 27%;
+			display: none;
+			background-image: url(Loc2/talk.png);
+			background-size: 100% 100%;
+			color: black;
+			padding: 50px;
+		}
+
+		.loc4_pravilno{
+			background-color: gray; width: 100px; position: absolute;
+		}
+
+		.loc4_player {
+			left:40%; top:65%; position: absolute;
+		}
+
+		.loc4_variants {
+			background-color: gray; width: 100px; position: absolute;
+		}
+		.loc4_variants_block{
+			display: flex; position: absolute; top: 70%;left: 2%; display:none;
+		}
+		.loc4_timeSize {
+			font-size: 30px
+		}
+		.loc4_pole {
+			margin-top: 25%;
+			position: absolute;
+		}

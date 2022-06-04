@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title></title>
+    <style type="text/css">
+        .body1 {
+            background-image: url(ror2.png);
+        }
+        .item {
+            width: 150px;
+            height: 150px;
+            background-size:100%;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            height: 200px;
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+    </style>
+</head>
+<body class="body1">
+    <div class="row">
+    </div>
+    <h2 style="font-size: 4rem;" class="time1">Времечко: <span class="timerS"></span></h1>
+    <h1 class="time" style="font-size: 1.5rem;">Счёт ТВОЙ, НЕ МОЙ:<span class="score">0</span></h1>
+    <button class="btn btn-outline-primary">Начни играть!</button>
+    <script type="text/javascript">
+    //див-родитель
+    let row = document.querySelector(".row");
+    let timerS = document.querySelector('.timerS')
+    let body1 = document.querySelector('.body1')
+    let btn = document.querySelector('.btn')
+    let time = document.querySelector(".time")
+    let time1 = document.querySelector(".time1")
+    let score = 0
+    let timer = 8000
+    let scoreS = document.querySelector('.score')
+
+    let getRandom = function(arg) {
+        let random = Math.random() * arg;
+        let round = Math.round(random)
+        return round
+    }
+    let fTime = function() {
+        timer = timer - 1000
+        timerS.innerHTML = timer/1000
+        if (timer<=0) {
+            timerS.style.display = "none"
+        }
+    }
+
+    let check = 0
+
+    //хранение картинок
+    let images = ["Wisp.webp", "naem.webp", "trap.webp", "hunter.png", "Жирный.webp", "Imp.webp", "Wisp.webp", "naem.webp", "trap.webp", "hunter.png", "Жирный.webp", "Imp.webp"];
+
+    btn.onclick = function() {
+        btn.style.display = "none"
+        setInterval(fTime, 1000)
+        let stopGame = function() {
+            row.style.display = "none"    
+            time.style.display = "none"
+            time1.style.display = "none"
+            body1.style.backgroundImage = "url(maxresdefault.jpg)"
+            body1.style.backgroundSize = "100%"
+            if(score==6) {
+                alert('ура победа. ОООО ВЕЛИКИЙ СУП НАВАРИЛИ')
+            }
+            if (score<6) {
+                alert('Ну ты попуск конечно... БОтиха')
+            }
+        }
+    setTimeout(stopGame, timer)
+    
+// document.querySelectorAll(".pokemon1")[0].style.opacity="0";
+// document.querySelectorAll(".pokemon1")[1].style.opacity="0";
+// if(box.name == "2.png")
+// box.classList.add("pokemon2")
+    for(let i=0; i<12; i=i+1) {
+        
+       let num = getRandom(images.length-1); // Сохраняю рандом в переменную
+
+       let box = document.createElement('div');
+       row.appendChild(box);
+       box.classList.add('item');
+       
+       box.name = images[num]
+       box.style.backgroundImage = "url(" + images[num] + ")"
+       images.splice(num, 1)
+            
+        let boxOnclickOpti = function(name , classarg,) {
+            if(box.name == name) {
+                box.style.border = "4px solid orange"
+                box.classList.add(classarg)
+                box.onclick = null;
+                check = check + 1;
+                console.log(check)
+                box.style.transition = "1s";
+                if(check==2) {
+                    document.querySelectorAll("."+classarg)[0].style.opacity="0";
+                    document.querySelectorAll("."+classarg)[1].style.opacity="0";
+                    check=0
+                    score = score + 1;
+                    scoreS.innerHTML = score
+                }
+            }
+        }
+
+
+            box.onclick = function() {
+                boxOnclickOpti("Wisp.webp","pokemon1")
+                boxOnclickOpti("naem.webp","pokemon2")
+                boxOnclickOpti("trap.webp","pokemon3")
+                boxOnclickOpti("hunter.png","pokemon4")
+                boxOnclickOpti("Жирный.webp","pokemon5")
+                boxOnclickOpti("Imp.webp","pokemon6")
+                
+                }
+            }
+        }    
+
+
+    </script>
+</body>
+</html>
